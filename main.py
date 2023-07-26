@@ -61,9 +61,9 @@ while True:
         response_time = str(process_regex(terminal_output, no_response_str))
         response_time = response_time+" "*(3-len(response_time)) + " | " # Centers text in column
         ping_results[ip].append(response_time)
-    time.sleep(1)
+    # time.sleep(1)
 
-    # If display reaches threshold, clear results dict.
+    # When display reaches threshold, clear results dict.
     if len(list(ping_results.values())[0]) == results_per_row: 
         ping_results = {ip: [] for ip in default_hosts}
     else:
